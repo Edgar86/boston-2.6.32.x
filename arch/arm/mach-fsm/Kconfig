@@ -1,0 +1,35 @@
+if ARCH_FSM
+
+choice
+	prompt "FSM SoC Type"
+
+config ARCH_FSM9XXX
+	bool "FSM9XXX"
+	select ARCH_MSM_SCORPION
+	select MSM_VIC
+	select CPU_V7
+	select MSM_REMOTE_SPINLOCK_LDREX
+	select FSM9XXX_TLMM
+
+endchoice
+
+menu "FSM Board Selection"
+
+config MACH_FSM9XXX_SURF
+       depends on ARCH_FSM9XXX
+       depends on !MSM_STACKED_MEMORY
+       default y
+       bool "FSM9XXX SURF"
+       help
+         Support for the Qualcomm FSM9XXX SURF eval board.
+
+endmenu
+
+config PHYS_OFFSET
+	hex
+	default "0x10000000" if ARCH_FSM9XXX && !MSM_STACKED_MEMORY
+endif
+
+
+config FSM9XXX_TLMM
+       bool
