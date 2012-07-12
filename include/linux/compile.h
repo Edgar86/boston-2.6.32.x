@@ -1,9 +1,9 @@
-/* This file is auto generated, version 1 */
+/* This file is auto generated, version 4 */
 /*  PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#1 PREEMPT Sun Apr 22 00:56:52 WEST 2012"
-#define LINUX_COMPILE_TIME "00:56:52"
+#define UTS_VERSION "#4 PREEMPT Tue Jul 10 22:12:33 WEST 2012"
+#define LINUX_COMPILE_TIME "22:12:33"
 #define LINUX_COMPILE_BY "edgar"
-#define LINUX_COMPILE_HOST "ubuntu"
-#define LINUX_COMPILE_DOMAIN "ubuntu-domain"
-#define LINUX_COMPILER "gcc version 4.4.0 (GCC) "
+#define LINUX_COMPILE_HOST "ed-Asus"
+#define LINUX_COMPILE_DOMAIN
+#define LINUX_COMPILER "gcc version 4.4.3 (GCC) "

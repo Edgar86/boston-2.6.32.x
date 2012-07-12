@@ -1572,12 +1572,12 @@ void Q7x27_kybd_early_suspend(struct early_suspend *h)
 	{
 		enable_irq_wake(MSM_GPIO_TO_INT(g_center_pin));
 		enable_irq_wake(MSM_GPIO_TO_INT(rd->center_pin));
-		enable_irq_wake(MSM_GPIO_TO_INT(rd->volup_pin));
-		enable_irq_wake(MSM_GPIO_TO_INT(rd->voldn_pin));
-		enable_irq_wake(MSM_GPIO_TO_INT(rd->key_1_pin));
  	}
 
 
+	disable_irq(MSM_GPIO_TO_INT(rd->volup_pin));
+	disable_irq(MSM_GPIO_TO_INT(rd->voldn_pin));
+	disable_irq(MSM_GPIO_TO_INT(rd->key_1_pin));
 	disable_irq(MSM_GPIO_TO_INT(rd->key_2_pin));
 	disable_irq(MSM_GPIO_TO_INT(rd->cam_sw_t_pin));
 	disable_irq(MSM_GPIO_TO_INT(rd->cam_sw_f_pin));
@@ -1595,10 +1595,11 @@ void Q7x27_kybd_late_resume(struct early_suspend *h)
 	{
 		disable_irq_wake(MSM_GPIO_TO_INT(g_center_pin));
 		disable_irq_wake(MSM_GPIO_TO_INT(rd->center_pin));
-		disable_irq_wake(MSM_GPIO_TO_INT(rd->volup_pin));
-		disable_irq_wake(MSM_GPIO_TO_INT(rd->voldn_pin));
+
 	}
 
+	enable_irq(MSM_GPIO_TO_INT(rd->volup_pin));
+	enable_irq(MSM_GPIO_TO_INT(rd->voldn_pin));
 	enable_irq(MSM_GPIO_TO_INT(rd->key_1_pin));
 	enable_irq(MSM_GPIO_TO_INT(rd->key_2_pin));
 	enable_irq(MSM_GPIO_TO_INT(rd->volup_pin));
